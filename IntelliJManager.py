@@ -32,5 +32,3 @@ class IntelliJManager:
             self.input_manager.move_mouse_to_middle_of_screen()
             pyautogui.click()
             self.input_manager.ctrl_plus('d')
-
-# Class for running commands

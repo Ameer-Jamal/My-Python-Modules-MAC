@@ -26,4 +26,3 @@ class CommandRunner:
 
         # Run the AppleScript
         subprocess.run(['osascript', '-e', applescript])
-

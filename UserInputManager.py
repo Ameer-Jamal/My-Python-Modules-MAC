@@ -16,5 +16,3 @@ class UserInputManager:
         with self.keyboard.pressed(Key.ctrl):
             self.keyboard.press(arg)
             self.keyboard.release(arg)
-
-# Class for managing IntelliJ

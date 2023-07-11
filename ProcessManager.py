@@ -7,13 +7,8 @@ class ProcessManager:
     def __init__(self):
         pass
 
+    # Kills all processes that are listening on the specified port.
     def kill_port(self, port):
-        """Kills all processes that are listening on the specified port.
-
-        Args:
-            port (int): The port number.
-
-        """
         # Get the list of processes that are listening on the specified port.
         processes = f"sudo lsof -t -i tcp:{port} | xargs kill -9"
         if processes:
@@ -38,7 +33,7 @@ class ProcessManager:
             raise e
 
     # Method for getting the PID of a certain process
-    def get_PID(self, process_name):
+    def get_process_identifier_from_name(self, process_name):
         output = subprocess.check_output(["jps", "-l"])
         pid = None
         for line in output.decode("utf-8").splitlines():
@@ -48,7 +43,7 @@ class ProcessManager:
 
     # Method for killing a process by its name
     def kill_process_by_name(self, process_name):
-        PID = self.get_PID(process_name)
+        PID = self.get_process_identifier_from_name(process_name)
         if PID is not None:
             try:
                 self.kill_process(PID)
