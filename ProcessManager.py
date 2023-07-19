@@ -1,7 +1,6 @@
 import subprocess
 import os
-import subprocess
-import docker
+
 
 class ProcessManager:
     def __init__(self):
